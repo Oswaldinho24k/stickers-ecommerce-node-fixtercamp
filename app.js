@@ -50,12 +50,16 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
+app.locals.cart = {}
+
 
 
 const index = require('./routes/index');
 app.use('/', index);
 const products = require('./routes/products')
 app.use('/products', products)
+const cart = require('./routes/cart')
+app.use('/cart', cart)
 
 
 module.exports = app;
