@@ -1,0 +1,7 @@
+extends ../layout.pug
+
+block content
+  each p in products
+    -var productId = p._id
+    div
+      a(href="/products/detail/" + productId) #{p.name}
