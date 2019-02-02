@@ -10,6 +10,12 @@ router.get('/',(req, res)=>{
 })
 
 //detalle
+router.get('/detail/:productId', (req,res)=>{
+  Product.findById(req.params.productId)
+    .then(product=>{
+      res.render('products/detail',product)
+    }).catch(e=>res.render('error'))
+})
 
 //formulario
 router.get('/new', (req, res)=>{
