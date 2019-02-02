@@ -12,6 +12,17 @@ router.get('/',(req, res)=>{
 //detalle
 
 //formulario
+router.get('/new', (req, res)=>{
+  res.render('products/form')
+})
+
+router.post('/new',(req, res)=>{
+  console.log(req.body)
+  Product.create(req.body)
+    .then(product=>{
+      res.redirect('/products')
+    }).catch(e=>res.render('error'))
+})
 
 module.exports = router
 

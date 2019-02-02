@@ -7,7 +7,7 @@ const productSchema = new Schema({
   description:String,
   category:{
     type:String,
-    enum:['RECTANGULO', 'CIRCULO', 'TROQUELADO']
+    enum:['CHIDOS', 'MAS CHIDOS', 'SUPER CHIDOS']
   },
   price:Number,
   inOffer:{
